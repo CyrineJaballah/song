@@ -7,9 +7,47 @@
     <link rel="stylesheet" href="./loveTruck.css">
     <link rel="stylesheet" href="./envelope.css">
     <title>To my love 💖</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* Makes space for the button at the bottom */
+            height: 100vh; /* Full viewport height */
+            margin: 0; /* Remove default margin */
+        }
+
+        /* Pastel Button Styles */
+        .play-button {
+            background-color: #ff6f61; /* Pastel pink */
+            color: #ffffff;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            text-align: center;
+            margin: 20px auto; /* Center the button */
+            position: relative;
+            bottom: 0; /* Align it to the bottom */
+        }
+
+        .play-button:hover {
+            background-color: #ff4f3c; /* Darker pastel pink */
+            transform: scale(1.05);
+        }
+        
+        .envelope-container {
+            flex: 1; /* Allow envelope container to take available space */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
 </head>
 <body>
-    <audio autoplay loop >
+    <audio id="audio" loop>
         <source src="Apocalypse.mp3" type="audio/mpeg">
     </audio>
     
@@ -22,6 +60,8 @@
             <div class="envelope--base"></div> 
         </div>
     </div>
+
+    <button class="play-button" onclick="playAudio()">Touch Me</button>
 
     <div class="truck-container">
         <div class="container">
@@ -83,6 +123,13 @@
             </div>
         </div>
     </div>
+
+    <script>
+        function playAudio() {
+            const audio = document.getElementById('audio');
+            audio.play();
+        }
+    </script>
     
 </body>
 </html>
